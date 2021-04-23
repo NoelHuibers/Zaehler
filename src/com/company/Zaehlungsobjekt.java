@@ -1,5 +1,5 @@
 package com.company;
 
-public enum Zählungsobjekt {
+public enum Zaehlungsobjekt {
     AUTO, BUS, VOEGEL
 }

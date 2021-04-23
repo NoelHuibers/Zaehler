@@ -1,12 +1,19 @@
 package com.company;
 
-public class Zähler {
+public class Zaehler {
 
+    //Klassenvariablen
     int zahl = 0;
     int schrittZahl = 1;
+    Zaehlungsobjekt name;
 
-    public void Zähler(){
-
+    /**
+     ** Diese ist der Konstruktor der Klasse Zähler. Diese Funktion wird beim erstellen des Objekts ausgeführt und setzt den Namen des Objekts, welches gezählt wird.
+     ** @param name;
+     ** @ensures this.name = name;
+     **/
+    public Zaehler(Zaehlungsobjekt name){
+        this.name = name;
     }
 
     /**

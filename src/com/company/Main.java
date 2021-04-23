@@ -1,10 +1,14 @@
 package com.company;
 
-import javax.swing.*;
-
 public class Main {
+
+    /**
+     ** Diese Funktion ist die Main Methode des Projekts. Diese führt das Programm aus, indem es sowohl einen Zähler initalisiert als auch ein GUI in welchem man den Zähler nutzt.
+     ** @ensures zaehler.init();
+     ** @ensures gui.init();
+     **/
     public static void main(String[] args) {
-        Zähler zaehler = new Zähler();
-        JFrame gui = new GUI(zaehler);
+        Zaehler zaehler = new Zaehler(Zaehlungsobjekt.VOEGEL);
+        new GUI(zaehler);
     }
 }
