@@ -1,11 +1,11 @@
 package com.company;
 
-public class ZählerMain {
+public class Zähler {
 
     int zahl = 0;
     int schrittZahl = 1;
 
-    public static void main(String[] args) {
+    public void Zähler(){
 
     }
 
@@ -14,8 +14,8 @@ public class ZählerMain {
      ** @requires schrittzahl!=0;
      ** @ensures this.zahl=+schrittZahl;
      **/
-    public void hochzählen() {
-        this.zahl=+schrittZahl;
+    public void hochzaehlen() {
+        this.zahl+=schrittZahl;
     }
 
     /**
@@ -23,8 +23,8 @@ public class ZählerMain {
      ** @requires schrittzahl!=0;
      ** @ensures this.zahl=-schrittZahl;
      **/
-    public void runterzählen() {
-        this.zahl=-schrittZahl;
+    public void runterzaehlen() {
+        this.zahl-=schrittZahl;
     }
 
     /**
@@ -38,7 +38,7 @@ public class ZählerMain {
 
     /**
      ** Diese Funktion ist die getter-Methode der Klassenvariable "schrittzahl". Dies gibt die zurzeitige Schrittzahl des Zählers zurück.
-     ** @returns schrittZahl;
+     ** @return schrittZahl;
      **/
     public int getSchrittzahl() {
         return schrittZahl;
@@ -46,7 +46,7 @@ public class ZählerMain {
 
     /**
      ** Diese Funktion ist die setter-Methode der Klassenvariable "schrittzahl". Dies setzt den Schrittzähler des Zählers.
-     ** @params int zahl;
+     ** @param zahl;
      ** @requires zahl!=0;
      ** @ensures this.schrittZahl=zahl;
      **/
@@ -56,7 +56,7 @@ public class ZählerMain {
 
     /**
      ** Diese Funktion ist die getter-Methode der Klassenvariable "zahl". Dies gibt die zurzeitige Zahl des Zählers zurück.
-     ** @returns zahl;
+     ** @return zahl;
      **/
     public int getZahl() {
         return zahl;
@@ -64,7 +64,7 @@ public class ZählerMain {
 
     /**
      ** Diese Funktion ist die setter-Methode der Klassenvariable "zahl". Dies setzt die Zahl des Zählers auf einen beliebigen Wert.
-     ** @params int zahl;
+     ** @param zahl;
      ** @ensures this.zahl=zahl;
      **/
     public void setZahl(int zahl) {
