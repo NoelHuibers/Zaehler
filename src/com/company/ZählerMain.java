@@ -6,7 +6,7 @@ public class ZählerMain {
     int schrittZahl = 1;
 
     public static void main(String[] args) {
-	// code
+
     }
 
     /**
