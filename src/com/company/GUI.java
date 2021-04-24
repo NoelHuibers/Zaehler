@@ -8,8 +8,9 @@ public class GUI extends JFrame {
 
     public GUI(){
         window();
-        selectObject();
         confirmButton();
+        selectObject();
+
     }
 
     public void window(){
@@ -24,7 +25,10 @@ public class GUI extends JFrame {
         countingObject = new JComboBox<>(CountingObject.values());
         countingObject.setBounds(160, 120, 80, 40);
         countingObject.setSize(80, 40);
+
         add (countingObject);
+        countingObject.revalidate();
+        countingObject.repaint();
     }
 
     private void confirmButton(){
