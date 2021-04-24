@@ -29,7 +29,7 @@ public class GUI2 extends JFrame {
         setLayout(null);
         setVisible(true);
         setSize(480, 800);
-        setTitle("Zähler");
+        setTitle("Counter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -84,22 +84,26 @@ public class GUI2 extends JFrame {
      ** @ensures if JButton.pressed() => window.countDown();
      **/
     private void minusButton(Counter counter){
-        JButton runter = new JButton("-");
-        runter.setBounds(150,625,10,10);
-        runter.setSize(50,50);
-        runter.addActionListener(e ->
+        JButton down = new JButton("-");
+        down.setBounds(150,625,10,10);
+        down.setSize(50,50);
+        down.addActionListener(e ->
         {
             counter.countDown();
             number.setText(String.valueOf(counter.number));
         });
-        add (runter);
+        add (down);
     }
 
-    //Funktioniert noch nicht.
+
     private void stepCount(Counter counter){
         JSpinner stepCount = new JSpinner(new SpinnerNumberModel(counter.stepCount,1,100,1));
         stepCount.setBounds(360, 50,50, 50);
         stepCount.setSize(40, 50);
+        stepCount.addChangeListener(e ->
+        {
+            counter.setStepCount((Integer) stepCount.getValue());
+        });
         add (stepCount);
     }
 

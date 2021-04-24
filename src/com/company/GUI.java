@@ -35,7 +35,7 @@ public class GUI extends JFrame {
         {
             Counter counter = new Counter((CountingObject) countingObject.getSelectedItem());
             new GUI2(counter);
-
+            super.dispose();
         });
         add (confirm);
     }
