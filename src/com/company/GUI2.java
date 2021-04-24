@@ -101,9 +101,7 @@ public class GUI2 extends JFrame {
         stepCount.setBounds(360, 50,50, 50);
         stepCount.setSize(40, 50);
         stepCount.addChangeListener(e ->
-        {
-            counter.setStepCount((Integer) stepCount.getValue());
-        });
+                counter.setStepCount((Integer) stepCount.getValue()));
         add (stepCount);
     }
 

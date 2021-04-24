@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class GUI extends JFrame {
 
-    private JComboBox countingObject;
+    private JComboBox<CountingObject> countingObject;
 
     public GUI(){
         window();
