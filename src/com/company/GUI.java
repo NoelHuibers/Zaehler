@@ -4,40 +4,39 @@ import javax.swing.*;
 
 public class GUI extends JFrame {
 
-    public boolean zaehlerErstellt;
-    private JComboBox zaehlungsObjekt;
+    private JComboBox countingObject;
 
     public GUI(){
-        fenster();
-        zaehlungsObjektauswahl();
-        bestaetigenButton();
+        window();
+        selectObject();
+        confirmButton();
     }
 
-    public void fenster(){
+    public void window(){
         setLayout(null);
         setVisible(true);
         setSize(480, 800);
-        setTitle("Zähler");
+        setTitle("Counter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    private void zaehlungsObjektauswahl(){
-        zaehlungsObjekt = new JComboBox<Zaehlungsobjekt>(Zaehlungsobjekt.values());
-        zaehlungsObjekt.setBounds(160, 120, 80, 40);
-        zaehlungsObjekt.setSize(80, 40);
-        add (zaehlungsObjekt);
+    private void selectObject(){
+        countingObject = new JComboBox<>(CountingObject.values());
+        countingObject.setBounds(160, 120, 80, 40);
+        countingObject.setSize(80, 40);
+        add (countingObject);
     }
 
-    private void bestaetigenButton(){
-        JButton bestaetigen = new JButton("Bestätigen");
-        bestaetigen.setBounds(130,625,150,50);
-        bestaetigen.setSize(150,50);
-        bestaetigen.addActionListener(e ->
+    private void confirmButton(){
+        JButton confirm = new JButton("Confirm");
+        confirm.setBounds(130,625,150,50);
+        confirm.setSize(150,50);
+        confirm.addActionListener(e ->
         {
-            Zaehler zaehler = new Zaehler((Zaehlungsobjekt) zaehlungsObjekt.getSelectedItem());
-            new GUI2(zaehler);
+            Counter counter = new Counter((CountingObject) countingObject.getSelectedItem());
+            new GUI2(counter);
 
         });
-        add (bestaetigen);
+        add (confirm);
     }
 }

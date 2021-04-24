@@ -4,29 +4,28 @@ import javax.swing.*;
 
 public class GUI2 extends JFrame {
 
-    //Klassenvariablen
-    private JLabel zahl;
+    //Class variables
+    private JLabel number;
 
     /**
      ** Diese ist der Konstruktor der Klasse GUI. Diese Funktion wird beim erstellen des Objekts ausgeführt.
-     ** @param zaehler;
-     ** @ensures gui.init();
+     ** @param counter;
+     ** @ensures GUI2.init();
      **/
-    public GUI2(Zaehler zaehler){
-        fenster();
-        name(zaehler);
-        zahl(zaehler);
-        plusButton(zaehler);
-        minusButton(zaehler);
-        schrittZahl(zaehler);
+    public GUI2(Counter counter){
+        window();
+        name(counter);
+        number(counter);
+        plusButton(counter);
+        minusButton(counter);
+        stepCount(counter);
     }
 
-
     /**
-     ** Diese ist die Methode fenster. Sie erstellt ein normales Fenster mit der Abmessung 480x800.
-     ** @ensures fenster.init();
+     ** Diese ist die Methode window. Sie erstellt ein normales Fenster mit der Abmessungen 480x800.
+     ** @ensures window.init();
      **/
-    private void fenster(){
+    private void window(){
         setLayout(null);
         setVisible(true);
         setSize(480, 800);
@@ -36,73 +35,72 @@ public class GUI2 extends JFrame {
 
     /**
      ** Diese ist die Methode name. Sie zeigt den Namen des zu zählenden Objekts auf einem Fenster ab.
-     ** @param zaehler;
-     ** @requires fenster.init();
+     ** @param counter;
+     ** @requires window.init();
      ** @ensures name.init();
      **/
-    private void name(Zaehler zaehler){
-        //Klassenvariablen
-        JLabel name = new JLabel(String.valueOf(zaehler.name));
+    private void name(Counter counter){
+        JLabel name = new JLabel(String.valueOf(counter.name));
         name.setBounds(230, 300,100, 100);
         add (name);
     }
 
     /**
      ** Diese ist die Methode zahl. Sie bildet die aktuelle Zahl des zu zählenden Objekts auf einem Fenster ab.
-     ** @param zaehler;
-     ** @requires fenster.init();
-     ** @ensures zahl.init();
+     ** @param counter;
+     ** @requires window.init();
+     ** @ensures counter.init();
      **/
-    private void zahl(Zaehler zaehler){
-        zahl = new JLabel(String.valueOf(zaehler.zahl));
-        zahl.setBounds(230, 600,100, 100);
-        add (zahl);
+    private void number(Counter counter){
+        number = new JLabel(String.valueOf(counter.number));
+        number.setBounds(230, 600,100, 100);
+        add (number);
     }
 
     /**
      ** Diese ist die Methode plusButton. Sie erstellt einen Plusbutton mit welchem man den Zähler hochzählen kann.
-     ** @param zaehler;
-     ** @requires fenster.init();
+     ** @param counter;
+     ** @requires window.init();
      ** @ensures plusButton.init();
-     ** @ensures if JButton.pressed() => zähler.hochzaehlen();
+     ** @ensures if JButton.pressed() => counter.countUp();
      **/
-    private void plusButton(Zaehler zaehler){
-        JButton hoch = new JButton("+");
-        hoch.setBounds(270,625,10,10);
-        hoch.setSize(50,50);
-        hoch.addActionListener(e ->
+    private void plusButton(Counter counter){
+        JButton up = new JButton("+");
+        up.setBounds(270,625,10,10);
+        up.setSize(50,50);
+        up.addActionListener(e ->
         {
-            zaehler.hochzaehlen();
-            zahl.setText(String.valueOf(zaehler.zahl));
+            counter.countUp();
+            number.setText(String.valueOf(counter.number));
         });
-        add (hoch);
+        add (up);
     }
 
     /**
      ** Diese ist die Methode minusButton. Sie erstellt einen Minusbutton mit welchem man den Zähler runterzählen kann.
-     ** @param zaehler;
-     ** @requires fenster.init();
+     ** @param counter;
+     ** @requires window.init();
      ** @ensures minusButton.init();
-     ** @ensures if JButton.pressed() => zähler.runterzählen();
+     ** @ensures if JButton.pressed() => window.countDown();
      **/
-    private void minusButton(Zaehler zaehler){
+    private void minusButton(Counter counter){
         JButton runter = new JButton("-");
         runter.setBounds(150,625,10,10);
         runter.setSize(50,50);
         runter.addActionListener(e ->
         {
-            zaehler.runterzaehlen();
-            zahl.setText(String.valueOf(zaehler.zahl));
+            counter.countDown();
+            number.setText(String.valueOf(counter.number));
         });
         add (runter);
     }
 
     //Funktioniert noch nicht.
-    private void schrittZahl(Zaehler zaehler){
-        JSpinner schrittZahl = new JSpinner(new SpinnerNumberModel(zaehler.schrittZahl,1,100,1));
-        schrittZahl.setBounds(360, 50,50, 50);
-        schrittZahl.setSize(40, 50);
-        add (schrittZahl);
+    private void stepCount(Counter counter){
+        JSpinner stepCount = new JSpinner(new SpinnerNumberModel(counter.stepCount,1,100,1));
+        stepCount.setBounds(360, 50,50, 50);
+        stepCount.setSize(40, 50);
+        add (stepCount);
     }
 
 }
