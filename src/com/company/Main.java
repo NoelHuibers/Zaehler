@@ -8,7 +8,6 @@ public class Main {
      ** @ensures gui.init();
      **/
     public static void main(String[] args) {
-        Zaehler zaehler = new Zaehler(Zaehlungsobjekt.VOEGEL);
-        new GUI(zaehler);
+        new GUI();
     }
 }
