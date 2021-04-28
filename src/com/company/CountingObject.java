@@ -7,5 +7,5 @@ package com.company;
  * @version 0.0.1
  */
 public enum CountingObject {
-    CAR, BUS, BIRD
+    CAR, BUS, BIRD;
 }

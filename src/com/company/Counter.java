@@ -9,6 +9,7 @@ package com.company;
 public class Counter {
 
     //Class Variables
+    static int id;
     int number = 0;
     int stepCount = 1;
     CountingObject name;
@@ -20,6 +21,7 @@ public class Counter {
      */
     public Counter(CountingObject name){
         this.name = name;
+        id++;
     }
 
     /**

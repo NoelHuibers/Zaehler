@@ -18,14 +18,14 @@ public class GUI2 extends JFrame {
      * @param counter;
      * @ensures GUI2.init();
      */
-    public GUI2(Counter counter){
+    public GUI2(Counter counter, Database database){
         window();
         name(counter);
         number(counter);
         plusButton(counter);
         minusButton(counter);
         stepCount(counter);
-        goBackButton();
+        goBackButton(database, counter);
         resetButton(counter);
     }
 
@@ -125,13 +125,14 @@ public class GUI2 extends JFrame {
      * @ensures goBackButton.init();
      * @ensures if JButton.pressed() => super.dispose();
      */
-    private void goBackButton(){
+    private void goBackButton(Database database, Counter counter){
         JButton back = new JButton("Back");
         back.setBounds(40,40,150,50);
         back.setSize(150,50);
         back.addActionListener(e ->
         {
-            new GUI();
+            new GUI(database);
+            //database.save(counter);
             super.dispose();
         });
         add (back);
