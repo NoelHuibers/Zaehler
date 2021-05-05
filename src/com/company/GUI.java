@@ -2,7 +2,6 @@ package com.company;
 
 import javax.swing.*;
 
-
 /**
  * Die Klasse GUI extends JFrame und ist ein GUI zum Erstellen eines Zählers. Es öffnet sich beim Start des Programmes.
  *
