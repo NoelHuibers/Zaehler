@@ -19,7 +19,7 @@ public class Counter {
      * @param name;
      * @ensures this.name = name;
      */
-    public Counter(CountingObject name){
+    public Counter (CountingObject name){
         this.name = name;
         id++;
     }
